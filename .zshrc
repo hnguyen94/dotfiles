@@ -104,11 +104,11 @@ export SANDBOX=test-hoang-nguyen.env.xing.com
 export PATH="/usr/local/sbin:$PATH"
 
 eval "$(rbenv init -)"
+eval $(docker-machine env default)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(~/xing-scripts/completion/zsh $fpath)
 source ~/.iterm2_shell_integration.`basename $SHELL`
-eval $(docker-machine env default)
 export DOCKER_IP=$(docker-machine ip default)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
