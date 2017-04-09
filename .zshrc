@@ -61,7 +61,6 @@ plugins=(alias-tips history-search-multi-word colored-man-pages extract github j
 # User configuration
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
@@ -91,45 +90,7 @@ export PATH="/usr/local/sbin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ip="ifconfig | grep -B3 active | grep 'inet ' | awk '{print \$2}'"
-alias v="mvim"
-alias lsa="ls -lha"
-alias itm="itermocil"
-alias rss="rsense start --port 65535"
-alias xxbox='xing xingbox'
-alias be="bundle exec"
-alias work="cd /Users/hoang.nguyen/Projects/Xing"
-alias cm= commit -m
-alias ca= commit -a --verbose
-alias c= commit --verbose
-alias cm= commit -a - m
-alias ac="git add . && git commit -a"
-alias gt="gittower"
-alias ygo="/Applications/TDOANE.app/Contents/MacOS/startwine ; exit;"
-alias dms="docker-machine start; source ~/.zshrc;"
-alias speedtest='speedtest_cli'
-alias ts="tig status"
-alias tl="tig"
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-# Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias week='date +%V'
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-# ip addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-# Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
+source ~/.aliases
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 #
 compctl -g '~/.teamocil/*(:t:r)' itermocil
