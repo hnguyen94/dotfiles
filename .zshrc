@@ -40,6 +40,7 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 source ~/.aliases
+source ~/.functions
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 #
 compctl -g '~/.teamocil/*(:t:r)' itermocil
