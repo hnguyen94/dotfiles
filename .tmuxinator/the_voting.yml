@@ -32,7 +32,11 @@ root: ~/Projects/Private/the_voting
 
 windows:
   - main: atom .
-  - git: ts
+  - git:
+      layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
+      panes:
+        - ts
+        - git st
   - console: rc
   - server: bundle exec rails s
   - logs: tail -f log/development.log
