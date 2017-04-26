@@ -13,7 +13,6 @@ alias cm= commit -a - m
 alias ac="git add . && git commit -a"
 alias gt="gittower"
 alias ygo="/Applications/TDOANE.app/Contents/MacOS/startwine ; exit;"
-alias dms="docker-machine start; source ~/.zshrc;"
 alias speedtest='speedtest_cli'
 alias ts="tig status"
 alias tl="tig"
@@ -32,3 +31,13 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+alias doc="docker-compose"
+alias docker-spec='docker-compose run web bundle exec rspec'
+
+### git release aliases ###
+# List ordered tags with comments
+alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerdate:short)%0a%(contents)" refs/tags | less'
+# List merge commits
+alias glrelease='git log --oneline --grep=Merge --since "2 weeks ago"'
+# Change the last tags comment (before pushing)
+alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -'
