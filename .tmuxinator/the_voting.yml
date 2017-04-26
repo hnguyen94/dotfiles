@@ -3,40 +3,16 @@
 name: the_voting
 root: ~/Projects/Private/the_voting
 
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: byobu
-
-# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-# startup_window: editor
-
-# Specitifes (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
-# startup_pane: 1
-
-# Controls whether the tmux session should be attached to automatically. Defaults to true.
-# attach: false
-
-# Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t the_voting
-
 windows:
-  - main: atom .
+  - main:
+      layout: d9a5,181x51,0,0[181x36,0,0,0,181x14,0,37{90x14,0,37,9,90x14,91,37,10}]
+      panes:
+        - atom .
+        - doc run web rails console
+        - udenv && doc up
   - git:
       layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
       panes:
         - ts
         - git st
-  - console: rc
-  - server: bundle exec rails s
   - logs: tail -f log/development.log

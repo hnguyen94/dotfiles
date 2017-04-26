@@ -31,13 +31,18 @@ root: ~/Projects/Xing/coaches-app
 # post: tmux -CC attach -t coaches-ap
 
 windows:
-  - main: atom .
-  - console: bin/rails c
+  # - main: atom .
+  - main:
+      layout: d9a5,181x51,0,0[181x36,0,0,0,181x14,0,37{90x14,0,37,9,90x14,91,37,10}]
+      panes:
+        - atom .
+        - bin/rails c
+        - terminate 3000 && sleep 4 && bin/rails s
   - git:
       layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
       panes:
         - ts
         - git st
-  - server: terminate 3000 && sleep 6 && bin/rails s
+  # - server: terminate 3000 && sleep 4 && bin/rails s
   - docker: docker-compose up
   - logs: tail -f log/development.log
