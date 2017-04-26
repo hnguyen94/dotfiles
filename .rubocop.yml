@@ -16,6 +16,9 @@ Metrics/MethodLength:
   CountComments: false
   Max: 30
 
+Style/SymbolArray:
+  Enabled: false
+
 Metrics/ParameterLists:
   Enabled: true
   CountKeywordArgs: false
@@ -98,8 +101,4 @@ Metrics/ModuleLength:
 
 Style/Lambda:
   Enabled: false
-
-#  UnnecessaryStringOutput:
-#   exclude:
-#     - '**/*.html.haml'
 
