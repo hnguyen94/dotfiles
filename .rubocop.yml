@@ -64,9 +64,6 @@ Style/TrailingBlankLines:
 Style/ExtraSpacing:
   AllowForAlignment: true
 
-Style/GuardClause:
-  Enabled: false
-
 Style/NegatedIf:
   Enabled: false
 
@@ -102,3 +99,5 @@ Metrics/ModuleLength:
 Style/Lambda:
   Enabled: false
 
+Style/EmpthyMethod:
+  Enabled: false

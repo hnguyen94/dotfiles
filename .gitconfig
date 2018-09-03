@@ -12,9 +12,10 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [push]
 	default = simple
 [mergetool "Kaleidoscope"]
@@ -38,5 +39,8 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	fetchmaster = fetch origin master:master
+	undo = reset --hard HEAD~1
+	conflict = diff --name-only --diff-filter=U
 [commit]
 	template = /Users/hoang.nguyen/.stCommitMsg

@@ -16,6 +16,8 @@ alias ygo="/Applications/TDOANE.app/Contents/MacOS/startwine ; exit;"
 alias speedtest='speedtest_cli'
 alias ts="tig status"
 alias tl="tig"
+alias samsung="cd /Volumes/Samsung\ T3/.config/"
+
 alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
@@ -41,3 +43,7 @@ alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerd
 alias glrelease='git log --oneline --grep=Merge --since "2 weeks ago"'
 # Change the last tags comment (before pushing)
 alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -'
+
+alias drw="doc run web"
+
+

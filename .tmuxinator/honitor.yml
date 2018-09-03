@@ -1,0 +1,14 @@
+# ~/.tmuxinator/honitor.yml
+
+name: honitor
+root: /Users/hoang.nguyen/Projects/Private/honitor
+
+windows:
+  - main:
+    - code .
+
+  - git:
+      panes:
+        - ts
+
+  - server: ssh root@senkou-dev.com

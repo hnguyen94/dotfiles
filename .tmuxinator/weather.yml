@@ -1,0 +1,18 @@
+# ~/.tmuxinator/weather.yml
+
+name: the_voting
+root: ~/Projects/Private/weather
+
+windows:
+  - main:
+      layout: d9a5,181x51,0,0[181x36,0,0,0,181x14,0,37{90x14,0,37,9,90x14,91,37,10}]
+      panes:
+        - atom .
+        - bin/rails console
+        - bin/rails server
+  - git:
+      layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
+      panes:
+        - ts
+        - git st
+  - logs: tail -f log/development.log

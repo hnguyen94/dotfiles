@@ -1,0 +1,19 @@
+# ~/.tmuxinator/the_voting.yml
+
+name: chattchat
+root: ~/Documents/Berufsschule/IT Systeme/ProjektAE/ChatChat
+
+windows:
+  - main:
+      layout: d9a5,181x51,0,0[181x36,0,0,0,181x14,0,37{90x14,0,37,9,90x14,91,37,10}]
+      panes:
+        - atom .
+        - doc run web rails console
+        - udenv && doc up
+  - git:
+      layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
+      panes:
+        - ts
+        - git st
+  - logs: tail -f log/development.log
+

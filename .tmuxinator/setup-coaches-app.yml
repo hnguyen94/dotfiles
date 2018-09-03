@@ -1,0 +1,13 @@
+# ~/.tmuxinator/setup-coaches-app.yml
+
+name: setup-coaches-app
+root: ~/Projects/Xing/setup-coaches-app
+
+windows:
+  - main: atom .
+  - git:
+      layout: 3e34,181x51,0,0[181x36,0,0,2,181x14,0,37,6]
+      panes:
+        - ts
+        - git st
+
